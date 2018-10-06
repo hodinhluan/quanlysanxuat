@@ -69,6 +69,6 @@ class ErrorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def error_params
-      params.require(:error).permit(:error_title, :error_detail)
+      params.require(:error).permit(:error_title, :group_id)
     end
 end

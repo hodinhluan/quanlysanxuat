@@ -1,13 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Date:</strong>
-  <%= @daily_report.date %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @daily_report.name %>
+  <strong>Title:</strong>
+  <%= @daily_report.title %>
 </p>
 
 <p>
@@ -16,13 +11,13 @@
 </p>
 
 <p>
-  <strong>Error:</strong>
-  <%= @daily_report.error %>
+  <strong>Group:</strong>
+  <%= @daily_report.group %>
 </p>
 
 <p>
-  <strong>Group:</strong>
-  <%= @daily_report.group %>
+  <strong>User:</strong>
+  <%= @daily_report.user %>
 </p>
 
 <%= link_to 'Edit', edit_daily_report_path(@daily_report) %> |

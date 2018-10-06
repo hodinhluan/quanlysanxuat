@@ -10,25 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_06_160408) do
+ActiveRecord::Schema.define(version: 2018_10_06_175702) do
 
   create_table "daily_reports", force: :cascade do |t|
-    t.datetime "date"
-    t.string "name"
+    t.string "title"
     t.text "note"
-    t.integer "error_id"
     t.integer "group_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["error_id"], name: "index_daily_reports_on_error_id"
     t.index ["group_id"], name: "index_daily_reports_on_group_id"
+    t.index ["user_id"], name: "index_daily_reports_on_user_id"
+  end
+
+  create_table "daily_reports_errors", id: false, force: :cascade do |t|
+    t.integer "daily_report_id", null: false
+    t.integer "error_id", null: false
   end
 
   create_table "errors", force: :cascade do |t|
     t.string "error_title"
-    t.text "error_detail"
+    t.integer "group_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_errors_on_group_id"
   end
 
   create_table "groups", force: :cascade do |t|
@@ -37,11 +42,9 @@ ActiveRecord::Schema.define(version: 2018_10_06_160408) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "statuses", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "groups_users", id: false, force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "group_id", null: false
   end
 
   create_table "users", force: :cascade do |t|
