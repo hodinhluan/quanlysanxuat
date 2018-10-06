@@ -50,8 +50,8 @@ Things you may want to cover:
 
 => Models: 
 - group: group_id, name:string
-- daily_report: daily_report_id, date:datetime, name:string, note:string
-- user: user_id, user_name:string, password:string, role: [group_id]
+- daily_report: daily_report_id, date:datetime, name:string, note:text, error_id (many), group: references
+- user: user_id, user_name:string, password:string, role_id: [group_id]
 - error: error_id, error_title:string, error_detail:text
 
 # Report/Statistic:

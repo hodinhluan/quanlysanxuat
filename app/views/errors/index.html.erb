@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Errors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Error title</th>
+      <th>Error detail</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @errors.each do |error| %>
+      <tr>
+        <td><%= error.error_title %></td>
+        <td><%= error.error_detail %></td>
+        <td><%= link_to 'Show', error %></td>
+        <td><%= link_to 'Edit', edit_error_path(error) %></td>
+        <td><%= link_to 'Destroy', error, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Error', new_error_path %>

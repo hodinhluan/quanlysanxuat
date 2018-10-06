@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @daily_report.date %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @daily_report.name %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @daily_report.note %>
+</p>
+
+<p>
+  <strong>Error:</strong>
+  <%= @daily_report.error %>
+</p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @daily_report.group %>
+</p>
+
+<%= link_to 'Edit', edit_daily_report_path(@daily_report) %> |
+<%= link_to 'Back', daily_reports_path %>

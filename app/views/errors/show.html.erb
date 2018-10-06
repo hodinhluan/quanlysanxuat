@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Error title:</strong>
+  <%= @error.error_title %>
+</p>
+
+<p>
+  <strong>Error detail:</strong>
+  <%= @error.error_detail %>
+</p>
+
+<%= link_to 'Edit', edit_error_path(@error) %> |
+<%= link_to 'Back', errors_path %>
