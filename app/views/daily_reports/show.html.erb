@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Date:</strong>
+  <%= @daily_report.date %>
+</p>
+
+<p>
   <strong>Title:</strong>
   <%= @daily_report.title %>
 </p>
@@ -12,12 +17,12 @@
 
 <p>
   <strong>Group:</strong>
-  <%= @daily_report.group %>
+  <%= @daily_report.group.name %>
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= @daily_report.user %>
+  <%= @daily_report.user.name %>
 </p>
 
 <%= link_to 'Edit', edit_daily_report_path(@daily_report) %> |

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :errors
   resources :daily_reports
+  resources :errors
   resources :groups
   devise_for :users
 end

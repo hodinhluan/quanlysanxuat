@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Date</th>
       <th>Title</th>
       <th>Note</th>
       <th>Group</th>
@@ -16,10 +17,11 @@
   <tbody>
     <% @daily_reports.each do |daily_report| %>
       <tr>
+        <td><%= daily_report.date %></td>
         <td><%= daily_report.title %></td>
         <td><%= daily_report.note %></td>
-        <td><%= daily_report.group %></td>
-        <td><%= daily_report.user %></td>
+        <td><%= daily_report.group.name %></td>
+        <td><%= daily_report.user.name %></td>
         <td><%= link_to 'Show', daily_report %></td>
         <td><%= link_to 'Edit', edit_daily_report_path(daily_report) %></td>
         <td><%= link_to 'Destroy', daily_report, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -10,9 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_06_175702) do
+ActiveRecord::Schema.define(version: 2018_10_06_210155) do
 
   create_table "daily_reports", force: :cascade do |t|
+    t.datetime "date"
     t.string "title"
     t.text "note"
     t.integer "group_id"

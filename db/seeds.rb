@@ -29,7 +29,7 @@ Error.create!([
         error_title: "Lỗi cắt: Cắt không đúng định mức",
         group_id: Group.first.id
     }, {
-        error_title: "lỗi cắt: Rập sai mẫu",
+        error_title: "Lỗi cắt: Rập sai mẫu",
         group_id: Group.first.id
     }
 ])
