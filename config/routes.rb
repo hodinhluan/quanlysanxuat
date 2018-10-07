@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   resources :mistakes
   resources :groups
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  root :to => "daily_reports#index"
+  root :to => "rails_admin/main#dashboard"
   devise_for :users
 end

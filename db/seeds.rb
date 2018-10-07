@@ -98,7 +98,8 @@ d = DailyReport.new(
     group_id: Group.first.id,
     user_id: User.first.id
 )
-d.mistakes << [Mistake.all]
+d.mistakes << [Mistake.where("mistake_title LIKE '%cắt%'")]
 d.save!
+
 # Granted all groups for admin
 admin.groups << [Group.all]
