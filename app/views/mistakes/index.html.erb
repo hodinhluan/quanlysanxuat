@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Mistakes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Mistake title</th>
+      <th>Group</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mistakes.each do |mistake| %>
+      <tr>
+        <td><%= mistake.mistake_title %></td>
+        <td><%= mistake.group %></td>
+        <td><%= link_to 'Show', mistake %></td>
+        <td><%= link_to 'Edit', edit_mistake_path(mistake) %></td>
+        <td><%= link_to 'Destroy', mistake, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mistake', new_mistake_path %>

@@ -52,17 +52,17 @@ Things you may want to cover:
 - group: group_id, name:string
 - daily_report: daily_report_id, date:datetime, title:string, note:text, group: references, user: references
 - user: user_id, name:string, devise_default(email, password)
-- error: error_id, error_title:string, group: references
+- mistake: mistake_id, mistake_title:string, group: references
 
 ### Relationship
 - group: 
     * has_and_belongs_to_many :users
     * has_many :daily_reports
 - daily_report: 
-    * has_and_belongs_to_many :errors 
+    * has_and_belongs_to_many :mistakes 
     * belongs_to :groups
     * belongs_to :users
-    * accepts_nested_attributes_for :errors
+    * accepts_nested_attributes_for :mistakes
 - user:
     * has_and_belongs_to_many :groups
     * has_many :daily_reports
@@ -80,9 +80,9 @@ Things you may want to cover:
 ## Commands:
 - rails g scaffold group name:string
 - rails g migration CreateJoinTableUserGroup user group
-- rails g scaffold error error_title:string group:references
+- rails g scaffold mistake mistake_title:string group:references
 - rails g scaffold daily_report title:string note:text group:references user:references
-- rails g migration CreateJoinTableDailyReportError daily_report error
+- rails g migration CreateJoinTableDailyReportMistake daily_report mistake
 - rails db:migrate
 
 - rails db:drop

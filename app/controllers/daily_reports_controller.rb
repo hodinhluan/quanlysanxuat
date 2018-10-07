@@ -69,6 +69,6 @@ class DailyReportsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def daily_report_params
-      params.require(:daily_report).permit(:date, :title, :note, :group_id, :user_id)
+      params.require(:daily_report).permit(:title, :note, :group_id, :user_id, :mistake_id)
     end
 end

@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  root :to => "daily_reports#index"
   resources :daily_reports
-  resources :errors
+  resources :mistakes
   resources :groups
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  root :to => "daily_reports#index"
   devise_for :users
 end

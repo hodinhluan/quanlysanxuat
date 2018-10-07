@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Mistake title:</strong>
+  <%= @mistake.mistake_title %>
+</p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @mistake.group %>
+</p>
+
+<%= link_to 'Edit', edit_mistake_path(@mistake) %> |
+<%= link_to 'Back', mistakes_path %>

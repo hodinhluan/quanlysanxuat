@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_06_210155) do
+ActiveRecord::Schema.define(version: 2018_10_07_050058) do
 
   create_table "daily_reports", force: :cascade do |t|
     t.datetime "date"
@@ -29,12 +29,9 @@ ActiveRecord::Schema.define(version: 2018_10_06_210155) do
     t.integer "error_id", null: false
   end
 
-  create_table "errors", force: :cascade do |t|
-    t.string "error_title"
-    t.integer "group_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["group_id"], name: "index_errors_on_group_id"
+  create_table "daily_reports_mistakes", id: false, force: :cascade do |t|
+    t.integer "daily_report_id", null: false
+    t.integer "mistake_id", null: false
   end
 
   create_table "groups", force: :cascade do |t|
@@ -46,6 +43,14 @@ ActiveRecord::Schema.define(version: 2018_10_06_210155) do
   create_table "groups_users", id: false, force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "group_id", null: false
+  end
+
+  create_table "mistakes", force: :cascade do |t|
+    t.string "mistake_title"
+    t.integer "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_mistakes_on_group_id"
   end
 
   create_table "users", force: :cascade do |t|
