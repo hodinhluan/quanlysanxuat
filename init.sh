@@ -1,9 +1,23 @@
-rails g scaffold group name:string
-rails g migration CreateJoinTableUserGroup user group
+#!/bin/bash
 
-rails g scaffold mistake title:string group:references
+# just keep going if we don't have anything to install
+set +e
 
-rails g scaffold daily_report date:datetime title:string note:text group:references user:references
+# export secret before anything
+source /app/.profile.d/ruby.sh
 
-rails g migration CreateJoinTableDailyReportMistake daily_report mistake
-rails db:migrate
+
+# if [ "$RAILS_ENV" == "production" ]; then
+#   bundle exec rake assets:precompile
+# fi
+
+# for SCRIPT in $POST_RUN_SCRIPT_PATH/*; do
+#   [ -f "$SCRIPT" ] || continue
+#   set -x;
+#   source $SCRIPT;
+#   { set +x; } 2>/dev/null
+# done
+
+set -e
+
+exec "$@"
