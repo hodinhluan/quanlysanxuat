@@ -3,7 +3,7 @@ version: '3'
 services:
   quanlyduan:
     container_name: quanlyduan
-    image: sanhphanvan/quanlyduan:v0.2
+    image: sanhphanvan/quanlyduan:v0.3
     build:
       context: .
       dockerfile: Dockerfile
