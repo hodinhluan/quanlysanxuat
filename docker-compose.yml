@@ -5,6 +5,4 @@ services:
     image: sanhphanvan/quanlyduan:v0.4
     ports:
       - 8888:3000
-    volumes: 
-      - ./tmp/db:/app/user/db
     command: ["rails", "server"]
