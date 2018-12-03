@@ -2,7 +2,7 @@ version: '3'
 
 services:
   quanlyduan:
-    image: sanhphanvan/quanlyduan:v0.3
+    image: sanhphanvan/quanlyduan:v0.4
     ports:
       - 8888:3000
     volumes: 
