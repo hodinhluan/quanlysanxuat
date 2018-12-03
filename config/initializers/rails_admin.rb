@@ -1,8 +1,11 @@
 RailsAdmin.config do |config|
 
-  config.main_app_name = ["Quản lý dự án", "admin"]
+  config.main_app_name = ["Công ty Cổ phần Vinatex", "Đà Nẵng"]
   config.navigation_static_links = {
-    'Google' => 'http://www.google.com'
+    'Vinatex Đà Nẵng'   => 'http://vinatexdn.com.vn',
+    'Nhà máy Phù Mỹ'    => 'https://www.facebook.com/nhamaymayphumy',
+    'Nhà máy Dung Quất' => 'https://www.facebook.com/NhaMayMayDungQuat',
+    'Google'            => 'https://google.com'
   }
   config.navigation_static_label = "My Links"
 
@@ -28,7 +31,7 @@ RailsAdmin.config do |config|
 
   ## == Gravatar integration ==
   ## To disable Gravatar integration in Navigation Bar set to false
-  # config.show_gravatar = true
+  config.show_gravatar = false
 
   config.actions do
     dashboard                     # mandatory
@@ -39,7 +42,7 @@ RailsAdmin.config do |config|
     show
     edit
     delete
-    show_in_app
+    # show_in_app
 
     ## With an audit adapter, you can add:
     # history_index
